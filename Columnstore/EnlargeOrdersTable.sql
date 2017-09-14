@@ -1,6 +1,8 @@
 --Credit to Koen Verbeeck for this script
 --http://www.sqlservercentral.com/blogs/koen-verbeeck/2016/08/12/bigger-fact-table-for-wide-world-importers/
 
+USE [WideWorldImportersDW]
+
 SELECT
 	 [Order Key] = ISNULL(ROW_NUMBER() OVER(ORDER BY (SELECT NULL)),-1)
 	,[City Key]
